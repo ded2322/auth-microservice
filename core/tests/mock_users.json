@@ -1,0 +1,15 @@
+[
+    {
+        "username": "admin",
+        "hash_password": "$argon2id$v=19$m=65536,t=3,p=4$LoUwBsAYI0RI6T3nXCulNA$wbExgjGLbFxN2ng57FoZW5qBS9i7adghqAjAIPsHU2o"
+
+    },
+    {
+        "username": "artem",
+        "hash_password": "$argon2id$v=19$m=65536,t=3,p=4$fy9FyHlvLaV0LgWgtNaaEw$kF1oTRtKuki6wjJvBH1YLws2F+1t4/godFnGXEKds8E"
+    },
+    {
+        "username": "mamka-nagibator228",
+        "hash_password": "$argon2id$v=19$m=65536,t=3,p=4$cA4BIOS89/6fc04JQagVQg$cyYYI15B9f7iWzGavQ2cr5Tzarr0fkzi+va/UTj3Tz0"
+    }
+]
