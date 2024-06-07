@@ -7,11 +7,11 @@ app = FastAPI(title="User service", version='1.0')
 
 app.include_router(router)
 
-origins = ["localhost"]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
