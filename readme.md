@@ -9,7 +9,7 @@
 Остальные микросервисы:
 - Микросервис отвечающий за регистрацию пользователей: [Текущий репозиторий]
 - Микросервис отвечающий за загрузку видео: https://github.com/ded2322/video-upload-service.git
-- Микросервис отвечающий за показ видео: 
+- Микросервис отвечающий за показ видео: https://github.com/ded2322/streaming-microservice.git
 
 
 ## Инструменты
@@ -21,28 +21,27 @@
 База данных: Postgres 16
 
 ## Как запустить
-С клонировать репозиторий
-```text
-git clone https://github.com/ded2322/auth-service.git
-```
+1. Клонировать репозиторий
+    ```text
+    git clone https://github.com/ded2322/auth-service.git
+    ```
 
-Перейти в директорию с файлом
-```text
-cd auth-service
-```
-#### С Docker-compose
+2. Перейти в директорию с файлом
+    ```text
+    cd auth-service
+    ```
 
-Собрать Docker-compose образ
-```text
-docker-compose build
-```
+3. Арендовать базу данных, и внести нужные данные в .env файл
 
-Запустить Docker-compose образ
-```text
-docker-compose up
-```
+4. Собрать и поднять docker-compose
+    ```text
+     docker-compose up --build 
+    ```
 
 ### Обновления
+
+v.1.1
+- Удален контейнер отвечающий за базу данных
 
 v.1.0 [Текущая]
 
