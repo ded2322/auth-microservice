@@ -7,12 +7,12 @@ from core.dao.user_dao import UserDao
 from core.config import logger
 
 router = APIRouter(
-    prefix="/user",
-    tags=["Service User"],
+    prefix="/auth-microservice",
+    tags=["User microservice"],
 )
 
 
-@router.post("/register-super-user", status_code=201,summary="Register Superuser")
+@router.post("/register-super-user", status_code=201, summary="Register superuser")
 async def register_super_user(user_data: UserSchema):
     """
     Позволяет заригестировать супер-пользователя.
@@ -33,7 +33,7 @@ async def register_super_user(user_data: UserSchema):
     return JSONResponse(status_code=201, content={"detail": "Super user created successfully"})
 
 
-@router.post("/register-user",status_code=201,summary="Register user")
+@router.post("/register-user", status_code=201, summary="Register user")
 async def register_user(user_data: UserSchema):
     """
     Позволяет заригестировать пользователя.
@@ -54,7 +54,7 @@ async def register_user(user_data: UserSchema):
     return JSONResponse(status_code=201, content={"detail": "User created successfully"})
 
 
-@router.post("/login",status_code=200,summary="Login user")
+@router.post("/login", status_code=200, summary="Login user")
 async def login_user(input_data: UserSchema):
     """
     Позволяет войти в аккаунт.
@@ -75,7 +75,7 @@ async def login_user(input_data: UserSchema):
         print(f"Error in login_user: {str(e)}")
 
 
-@router.post("/decode-jwt", status_code=200,summary="Decode a JWT", tags=["JWT"])
+@router.post("/decode-jwt", status_code=200, summary="Decode a JWT", tags=["JWT"])
 async def decode_jwt(token: JwtSchema):
     """
     Декодирует jwt токен.
@@ -92,4 +92,3 @@ async def decode_jwt(token: JwtSchema):
         return await UserDao.user_info(id=user_id)
     except Exception as e:
         print(f"Error in decode_jwt: {str(e)}")
-
