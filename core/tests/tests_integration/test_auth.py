@@ -9,7 +9,7 @@ from httpx import AsyncClient
 
 ])
 async def test_register_user(username, password, status_code, ac: AsyncClient):
-    response = await ac.post("/user/register-user",
+    response = await ac.post("/auth-microservice/register-user",
                              json={"username": username,
                                    "password": password})
 
@@ -25,7 +25,7 @@ async def test_register_user(username, password, status_code, ac: AsyncClient):
 
 ])
 async def test_register_superuser(username, password, status_code, ac: AsyncClient):
-    response = await ac.post("/user/register-super-user",
+    response = await ac.post("/auth-microservice/register-super-user",
                              json={"username": username,
                                    "password": password})
 
@@ -38,7 +38,7 @@ async def test_register_superuser(username, password, status_code, ac: AsyncClie
 
 ])
 async def test_login_user(username, password, status_code, ac: AsyncClient):
-    response = await ac.post("/user/login",
+    response = await ac.post("/auth-microservice/login",
                              json={"username": username,
                                    "password": password})
     assert response.status_code == status_code
@@ -47,7 +47,7 @@ async def test_login_user(username, password, status_code, ac: AsyncClient):
     ("invalid token",409),
 ])
 async def test_decode_jwt(token,status_code, ac: AsyncClient):
-    response = await ac.post("/user/decode-jwt",
+    response = await ac.post("/auth-microservice/decode-jwt",
                              json={"token": token})
 
     assert response.status_code == status_code
